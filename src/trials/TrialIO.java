@@ -16,6 +16,10 @@ public class TrialIO {
 		a = new CombSort(arr.clone());
 		a.sort();
 		System.out.println(a);
+		
+		a = new InsertionSort(arr.clone());
+		a.sort();
+		System.out.println(a);
 	}
 
 }

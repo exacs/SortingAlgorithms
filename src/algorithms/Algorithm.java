@@ -27,7 +27,7 @@
 			String str = "";
 			if (this.isSorted()) {
 				// Show the steps amount
-				str += "Sorted in " + this.steps + " steps";
+				str += "Sorted in " + this.steps + " steps using " + this.getClass().getSimpleName();
 			} else {
 				// Show the whole array
 				for (int i=0; i<this.arr.length; i++) {
