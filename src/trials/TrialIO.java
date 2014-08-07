@@ -12,6 +12,10 @@ public class TrialIO {
 		a = new BubbleSort(arr.clone());
 		a.sort();
 		System.out.println(a);
+		
+		a = new CombSort(arr.clone());
+		a.sort();
+		System.out.println(a);
 	}
 
 }
