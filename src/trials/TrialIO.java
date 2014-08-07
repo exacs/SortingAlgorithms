@@ -20,6 +20,10 @@ public class TrialIO {
 		a = new InsertionSort(arr.clone());
 		a.sort();
 		System.out.println(a);
+		
+		a = new MergeSort(arr.clone());
+		a.sort();
+		System.out.println(a);
 	}
 
 }
