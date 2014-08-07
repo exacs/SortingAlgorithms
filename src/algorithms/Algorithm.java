@@ -22,5 +22,27 @@
 			return sorted;
 		}
 		
+		@Override
+		public String toString() {
+			String str = "";
+			if (this.isSorted()) {
+				// Show the steps amount
+				str += "Sorted in " + this.steps + " steps";
+			} else {
+				// Show the whole array
+				for (int i=0; i<this.arr.length; i++) {
+					int number = this.arr[i];
+					if (number<10) {
+						str += " ";
+					}
+					str += number + " ";
+					if (i%20==19) {
+						str +="\n";
+					}
+				}
+			}
+			return str;
+		}
+		
 		public abstract void sort();
 	}
