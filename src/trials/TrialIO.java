@@ -24,6 +24,10 @@ public class TrialIO {
 		a = new MergeSort(arr.clone());
 		a.sort();
 		System.out.println(a);
+		
+		a = new HeapSort(arr.clone());
+		a.sort();
+		System.out.println(a);
 	}
 
 }
