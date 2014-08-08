@@ -29,10 +29,9 @@ public class HeapSort extends Algorithm {
 		// Replace the peak with the last
 		for (int i=this.arr.length-1; i>0; i--) {
 			// Declare the new peak
-			int peak = this.arr[i];
 			this.arr[i] = this.arr[0];
 			
-			// Move the element downside
+			// Move the peak element downside
 			int mov = 0;
 			int ch1 = mov*2+1;
 			int ch2 = mov*2+2;
