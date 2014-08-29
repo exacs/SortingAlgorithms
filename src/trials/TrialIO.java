@@ -28,6 +28,10 @@ public class TrialIO {
 		a = new HeapSort(arr.clone());
 		a.sort();
 		System.out.println(a);
+		
+		a = new QuickSort(arr.clone());
+		a.sort();
+		System.out.println(a);
 	}
 
 }
