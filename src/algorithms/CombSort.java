@@ -29,6 +29,7 @@ public class CombSort extends Algorithm {
 				}
 			}//for
 			if (gap>1) {
+				swaps = 1;
 				gap = (int) (gap / 1.3);
 			}
 			if (gap==9 || gap==10) {
