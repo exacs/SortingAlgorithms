@@ -43,4 +43,43 @@ public class ArrayGenerator {
 		}
 		return arr;
 	}
+	
+	public static int[] almostOrdered(int n) {
+		int[] arr = new int[n];
+		Random r = new Random();
+		int e = r.nextInt(n-1);
+		
+		for (int i=0; i<n; i++) {
+			if (i==e) {
+				arr[i] = i+1;
+			} else if (i==e+1) {
+				arr[i] = i-1;
+			} else {
+				arr[i] = i;
+			}
+		}
+		return arr;
+	}
+	
+	public static int[] fewElements(int n) {
+		int[] arr = new int[n];
+		int els = (int) Math.log10(n) + 1;
+		
+		for (int i=0; i<n; i++) {
+			arr[i] = i % els;
+		}
+		
+		Random r = new Random();
+		int j;
+		
+		for (int i=0; i<n; i++) {
+			j = r.nextInt(n);
+			
+			int aux = arr[i];
+			arr[i] = arr[j];
+			arr[j] = aux;
+		}
+		
+		return arr;
+	}
 }
