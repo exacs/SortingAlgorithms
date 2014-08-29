@@ -31,37 +31,40 @@ public class QuickSort extends Algorithm {
 			pivot = (this.list.getFirst() + this.list.get(this.list.size()/2) + this.list.getLast())/3;
 		}
 		
-		// Split the queue into two Queues
+		// Split the queue into three Queues
 		LinkedList<Integer> left = new LinkedList<Integer>();
+		LinkedList<Integer> center = new LinkedList<Integer>();
 		LinkedList<Integer> right = new LinkedList<Integer>();
 		
 		while (!this.list.isEmpty()) {
 			int extraction = this.list.removeFirst();
 			if (extraction<pivot) {
 				left.add(extraction);
-			} else {
+			} else if (extraction>pivot) {
 				right.add(extraction);
+			} else {
+				center.add(extraction);
 			}
 			this.steps++;
 		}
 		
 		// Sort each separately
 		// If there is more than one element
-		if (!right.isEmpty() && left.size()>1) {
+		if (left.size()>1) {
 			QuickSort qsL = new QuickSort(left);
 			qsL.sort();
 			left = qsL.getList();
 			this.steps += qsL.getSteps();
 		}
-		if (!left.isEmpty() && right.size()>1) {
+		if (right.size()>1) {
 			QuickSort qsR = new QuickSort(right);
 			qsR.sort();
 			right = qsR.getList();
 			this.steps += qsR.getSteps();
 		}
 		
-		
 		this.list.addAll(left);
+		this.list.addAll(center);
 		this.list.addAll(right);
 
 		// Convert the queue into an array
