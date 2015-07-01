@@ -1,7 +1,8 @@
 package algorithms;
+import structures.Vector;
 
-public class BubbleSort extends Algorithm {
-	public BubbleSort(int[] arr) {
+public class BubbleSort<T extends Comparable<T>> extends Algorithm<T> {
+	public BubbleSort(Vector<T> arr) {
 		super(arr);
 	}
 
@@ -16,19 +17,17 @@ public class BubbleSort extends Algorithm {
 		do {
 			swaps=0;
 			// Loop from the end to i
-			for (int j=this.arr.length-1; j>i; j--) { //j=0
+			for (int j=this.arr.size()-1; j>i; j--) { //j=0
 				this.steps++;
 				// Compare an element with the separated with gap
-				if (this.arr[j] < this.arr[j-1]) {
+				if (this.arr.getValue(j).compareTo(this.arr.getValue(j-1)) < 0) {
 					// swap
-					int aux = this.arr[j];
-					this.arr[j] = this.arr[j-1];
-					this.arr[j-1] = aux;
+					this.arr.swap(j, j-1);
 					swaps++;
 				}
 			}//for
 			i++;
-		} while(swaps>0 && i<this.arr.length-1);
+		} while (swaps>0 && i<this.arr.size()-1);
 	}
 
 }
